@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'usuarios',        # Aplicación para gestión de usuarios
+    'productos',       # Aplicación para gestión de productos
+    'ventas',          # Aplicación para gestión de ventas
+    'almacen',         # Aplicación para gestión de inventario
+    'pagos',           # Aplicación para gestión de pagos
+    'conteo_diario',   # Aplicación para el conteo diario de productos
 ]
 
 MIDDLEWARE = [
