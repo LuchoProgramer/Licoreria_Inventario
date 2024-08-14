@@ -15,8 +15,15 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path('admin/', admin.site.urls),
+    path('usuarios/', include('usuarios.urls')),           # URLs para la aplicación de usuarios
+    path('productos/', include('productos.urls')),         # URLs para la aplicación de productos
+    path('ventas/', include('ventas.urls')),               # URLs para la aplicación de ventas
+    path('almacen/', include('almacen.urls')),             # URLs para la aplicación de inventario
+    path('pagos/', include('pagos.urls')),                 # URLs para la aplicación de pagos
+    path('conteo-diario/', include('conteo_diario.urls')), # URLs para la aplicación de conteo diario
+    path('sucursales/', include('sucursales.urls')),
 ]
