@@ -74,9 +74,13 @@ WSGI_APPLICATION = "licoreria.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'licoreria_db',
+        'USER': 'licoreria_user',
+        'PASSWORD': 'Camilucho1990',
+        'HOST': 'localhost',  # o la IP de tu servidor de base de datos
+        'PORT': '5432',  # Puerto por defecto de PostgreSQL
     }
 }
 
@@ -103,9 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "es-EC"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "America/Guayaquil"
 
 USE_I18N = True
 
