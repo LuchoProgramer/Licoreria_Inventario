@@ -1,0 +1,7 @@
+<h1>{{ producto.id|yesno:"Editar Producto,Nuevo Producto" }}</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+<a href="{% url 'producto_list' %}">Cancelar</a>

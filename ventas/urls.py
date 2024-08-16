@@ -1,15 +1,10 @@
-# ventas/views.py
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.urls import path
+from . import views
 
-def ventas_list(request):
-    return HttpResponse("Listado de ventas")
-
-def venta_detail(request, id):
-    return HttpResponse(f"Detalle de la venta con ID {id}")
-
-def venta_create(request):
-    return HttpResponse("Crear una nueva venta")
-
-def cierre_caja(request):
-    return HttpResponse("Cierre de caja diario")
+urlpatterns = [
+    path('', views.venta_list, name='venta_list'),
+    path('<int:pk>/', views.venta_detail, name='venta_detail'),
+    path('nuevo/', views.venta_create, name='venta_create'),
+    path('<int:pk>/editar/', views.venta_update, name='venta_update'),
+    path('<int:pk>/eliminar/', views.venta_delete, name='venta_delete'),
+]

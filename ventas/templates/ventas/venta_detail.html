@@ -1,0 +1,13 @@
+<h1>Detalle de Venta</h1>
+<p>Fecha: {{ venta.fecha }}</p>
+<p>Total: {{ venta.total }}</p>
+<p>Método de Pago: {{ venta.metodo_pago }}</p>
+<p>Sucursal: {{ venta.sucursal.nombre }}</p>
+<p>Vendedor: {{ venta.usuario.username }}</p>
+<h2>Productos:</h2>
+<ul>
+    {% for producto in productos %}
+    <li>{{ producto.cantidad }} x {{ producto.producto.nombre }} - {{ producto.precio_unitario }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'venta_list' %}">Volver a la lista de ventas</a>

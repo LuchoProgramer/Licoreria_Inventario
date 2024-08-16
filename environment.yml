@@ -1,0 +1,12 @@
+name: licoreria_env
+channels:
+  - defaults
+dependencies:
+  - django=4.1
+  - psycopg2
+  - gunicorn
+  - pip
+  - python=3.9
+  - pip:
+      - django-environ
+      - other-packages-you-need

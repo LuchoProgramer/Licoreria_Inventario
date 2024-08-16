@@ -1,0 +1,37 @@
+<!-- templates/home.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Ajusta la ruta al archivo CSS -->
+</head>
+<body>
+    <header>
+        <h1>Bienvenido al Panel de Control</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'profile' %}">Perfil</a></li>
+                <li><a href="{% url 'daily_count' %}">Conteo Diario</a></li>
+                <li><a href="{% url 'product_sales' %}">Venta de Productos</a></li>
+                <li><a href="{% url 'payments' %}">Pagos</a></li>
+                <li><a href="{% url 'invoicing' %}">Facturación</a></li>
+                {% if is_admin %}
+                    <li><a href="{% url 'admin_dashboard' %}">Panel de Administrador</a></li>
+                {% endif %}
+                <!-- Aquí puedes agregar un resumen o widgets con información relevante -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Resumen</h2>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Tu Empresa</p>
+    </footer>
+</body>
+</html>

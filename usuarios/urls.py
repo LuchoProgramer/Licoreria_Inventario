@@ -1,9 +1,16 @@
+from django.contrib import admin
+# usuarios/urls.py
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('login/', views.login_view, name='login'),          # Página de inicio de sesión
-    path('logout/', views.logout_view, name='logout'),       # Página de cierre de sesión
-    path('perfil/', views.perfil_view, name='perfil'),       # Página de perfil del usuario
-    path('registro/', views.registro_view, name='registro'), # Página de registro de nuevos usuarios
+    path('signup/', views.signup, name='signup'),
+    path('profile/', views.profile, name='profile'),
+    path('', views.home, name='home'),
+    path('daily_count/', views.daily_count, name='daily_count'),
+    path('product_sales/', views.product_sales, name='product_sales'),
+    path('payments/', views.payments, name='payments'),
+    path('invoicing/', views.invoicing, name='invoicing'),
+    path('admin_dashboard/', views.admin_dashboard, name='admin_dashboard'),
+    # Agrega otras rutas aquí
 ]
